@@ -1,0 +1,46 @@
+.timeline-image {
+  width: 100%;
+}
+
+.overlay {
+  padding: 20px;
+  background: lightgray;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: visibility .3s, opacity 0.3s linear;
+}
+
+.overlay-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#overlay-area-1 {
+  top: 66;
+  left: 130;
+}
+
+#overlay-area-2 {
+  top: 260;
+  left: 350;
+}
+
+#overlay-area-3 {
+  top: 66;
+  left: 570;
+}
+
+#overlay-area-4 {
+  top: 260;
+  left: 790;
+}
+
+#overlay-area-5 {
+  top: 66;
+  left: 1010;
+}
