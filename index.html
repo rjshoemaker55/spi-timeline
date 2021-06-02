@@ -1,115 +1,99 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' href='styles.css'>
-  <title>Timeline</title>
   <head>
-    <style>
-      .timeline-image {
-  width: 100%;
-}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeline</title>
+    <head>
+      <style>
+        .hover-area {
+          width: 40px;
+          height: 60px;
+          position: absolute;
+          left: 20px;
+          top: 20px;
+          z-index: 99;
+        }
+        
+        .overlay {
+          position: absolute;
+          left: -900px;
+          background: lightgray;
+          width: 100px;
+          padding: 10px;
+          border: 1px solid black;
+          border-radius: 10px;
+          font-weight: bold;
+        }
 
-.overlay {
-  padding: 20px;
-  background: lightgray;
-  font-size: 18px;
-  font-weight: bold;
-  border: 1px solid black;
-  border-radius: 10px;
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  transition: visibility .3s, opacity 0.3s linear;
-}
+        #hover-area-1 {
+          top: 20px;
+          left: 20px;
+        }
 
-.overlay-show {
-  visibility: visible;
-  opacity: 1;
-}
+        #hover-area-2 {
+          top: 120px;
+          left: 135px;
+        }
 
-#overlay-area-1 {
-  top: 66;
-  left: 130;
-}
+        #hover-area-3 {
+          top: 20px; 
+          left: 250px;
+        }
 
-#overlay-area-2 {
-  top: 260;
-  left: 350;
-}
+        #hover-area-4 {
+          top: 120px;
+          left: 360px;
+        }
+        
+        #hover-area-5 {
+          top: 20px;
+          left: 480px;
+        }
 
-#overlay-area-3 {
-  top: 66;
-  left: 570;
-}
+        .hover-area:hover span {
+          left: 50px;
+          top: 20px;
+        }
 
-#overlay-area-4 {
-  top: 260;
-  left: 790;
-}
-
-#overlay-area-5 {
-  top: 66;
-  left: 1010;
-}
-    </style>
+      </style>
+    </head>
   </head>
-</head>
-<body>
-  <div class='timeline-wrapper'>
-    <img class='timeline-image' src='Timeline Image.png' usemap='#timeline-map'>
-    <map name='timeline-map' id='timeline-map'>
-      <area id='area-1' shape='poly' coords='66,157,24,82,62,41,109,79'>
-      <area id='area-2' shape='poly' coords='286,220,245,288,290,336,328,284'>
-      <area id='area-3' shape='poly' coords='504,150,463,88,500,44,548,83'>
-      <area id='area-4' shape='poly' coords='724,217,683,296,727,332,768,286'>
-      <area id='area-5' shape='poly' coords='947,159,904,84,942,43,988,78'>
-    </map>
-  </div>
+  <body>
+    <img
+      class="timeline-image"
+      src="Timeline Image.png"
+      usemap="#timeline-map"
+    />
 
-  <div id='overlay-area-1' class='overlay'>
-    Timeline Item 1
-  </div>
+    <a id='hover-area-1' class='hover-area'>
+      <span id='overlay-1' class='overlay'>
+        Overlay 1
+      </span>
+    </a>
 
-  <div id='overlay-area-2' class='overlay'>
-    Timeline Item 2
-  </div>
+    <a id='hover-area-2' class='hover-area'>
+      <span id='overlay-2' class='overlay'>
+        Overlay 2
+      </span>
+    </a>
 
-  <div id='overlay-area-3' class='overlay'>
-    Timeline Item 3
-  </div>
+    <a id='hover-area-3' class='hover-area'>
+      <span id='overlay-3' class='overlay'>
+        Overlay 3
+      </span>
+    </a>
 
-  <div id='overlay-area-4' class='overlay'>
-    Timeline Item 4
-  </div> 
+    <a id='hover-area-4' class='hover-area'>
+      <span id='overlay-4' class='overlay'>
+        Overlay 4
+      </span>
+    </a>
 
-   <div id='overlay-area-5' class='overlay'>
-    Timeline Item 5
-  </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-
-    $(document).ready(() => {
-      console.log('ready')
-      if($('#timeline-map')) {
-        $('#timeline-map area').each(function() {
-          var id = $(this).attr('id')
-
-          $(this).mouseover(function() {
-            console.log('mouse over')
-            console.log('id' + id)
-            $(`#overlay-${id}`).addClass('overlay-show')
-          })
-
-          $(this).mouseout(function() {
-            console.log('mouse out')
-            $(`#overlay-${id}`).removeClass('overlay-show')
-          })
-        })
-      }
-    })
-  </script>
-</body>
+    <a id='hover-area-5' class='hover-area'>
+      <span id='overlay-5' class='overlay'>
+        Overlay 5
+      </span>
+    </a>
+  </body>
 </html>
